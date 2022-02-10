@@ -1,0 +1,46 @@
+<div class="section-header">
+  <h2>Stocks</h2>
+</div>
+<div class="content-left-flush">
+  <ul *ngFor="let stock of stocks" style="width:70%">
+    <li>
+      <button class="w3-button w3-hover-{{stock.color}} w3-{{stock.color}}"
+              style="width:5%;cursor:default">
+        {{stock.code}}
+      </button>
+      <b>&nbsp;{{stock.name}}</b>
+      ({{stock.sphere}}) Starting price: {{stock.price}} {{stock.included ? "[Included]" : "[Not included]"}}
+      &nbsp;&nbsp;&nbsp;
+      <a class="link-like" (click)="edit(stock.code)">Edit</a>
+      &nbsp;
+      <button *ngIf="stock.included" class="button-like white-button destructive"
+      (click)="toggle(stock.code)">
+        &times;
+      </button>
+      <button *ngIf="!stock.included" class="button-like white-button" (click)="toggle(stock.code)">
+        +
+      </button>
+      <div class="w3-modal" id="edit#{{stock.code}}"
+      style="{{'display:' + (visible[stock.code] ? 'block' : 'none')}}">
+        <div class="w3-container w3-modal-content">
+          <div class="content-center">
+            <p>Edit data
+              <span class="button-like destructive white-button w3-display-topright"
+                    (click)="edit(stock.code)">&times;</span>
+            </p>
+            <input type="number" placeholder="Money" class="content-standalone"
+                   id="{{'price#' + stock.code}}" value="{{stock.price}}"><br>
+            <label for="{{'distribution#' + stock.code}}">Distribution</label><br>
+            <select id="{{'distribution#' + stock.code}}" class="content-standalone">
+              <option value="--">--</option>
+              <option value="EVEN">Even</option>
+              <option value="NORM">Normal</option>
+            </select><br>
+            <input type="button" value="Save" (click)="save(stock.code)"
+                   class="content-standalone button-like">
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,62 @@
+[
+  {
+    "code": "DME",
+    "name": "Dr. Melon",
+    "sphere": "Food industry",
+    "color": "lime",
+    "price": 25,
+    "minPrice": 1,
+    "maxPrice": 100,
+    "distribution": "NORM"
+  },
+  {
+    "code": "OVB",
+    "name": "Oil Vault Bureau",
+    "sphere": "Oil companies",
+    "color": "brown",
+    "price": 50,
+    "minPrice": 1,
+    "maxPrice": 130,
+    "distribution": "NORM"
+  },
+  {
+    "code": "LED",
+    "name": "LZ embedded systems",
+    "sphere": "IT",
+    "color": "teal",
+    "price": 35,
+    "minPrice": 35,
+    "maxPrice": 75,
+    "distribution": "EVEN"
+  },
+  {
+    "code": "PNA",
+    "name": "Pineapple fly",
+    "sphere": "Tourism",
+    "color": "amber",
+    "price": 11.1,
+    "minPrice": 10,
+    "maxPrice": 15,
+    "distribution": "EVEN"
+  },
+  {
+    "code": "IKT",
+    "name": "Izhevsk digital tales",
+    "sphere": "Entertainment",
+    "color": "blue",
+    "price": 500.2,
+    "minPrice": 0,
+    "maxPrice": 1100,
+    "distribution": "NORM"
+  },
+  {
+    "code": "OMS",
+    "name": "Owen's Mushrooms",
+    "sphere": "Food industry",
+    "color": "deep-orange",
+    "price": 3.14,
+    "minPrice": 2,
+    "maxPrice": 6,
+    "distribution": "EVEN"
+  }
+]

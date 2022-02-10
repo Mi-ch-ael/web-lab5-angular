@@ -1,0 +1,43 @@
+<div class="section-header">
+  <h2>Settings</h2>
+</div>
+<div class="content-center">
+  <p *ngIf="settings.timestamp > ts">
+    Bargain starts in
+    {{floor((settings.timestamp - ts) / (60*60*1000)) > 0 ?
+    floor((settings.timestamp - ts) / (60*60*1000)) + " hours" : ""}}
+    {{floor((settings.timestamp - ts) % (60*60*1000) /60/1000)}} minutes.
+  </p>
+  <p *ngIf="settings.timestamp <= ts">
+    Bargain started {{floor((ts - settings.timestamp) / (60*60*1000)) > 0 ?
+    floor((ts - settings.timestamp) / (60*60*1000)) + " hours" : ""}}
+    {{floor((ts - settings.timestamp) % (60*60*1000) /60/1000)}} minutes ago.
+  </p>
+  <p>
+    Bargain lasts {{floor(settings.bargainTimeMs/1000)}} seconds.
+  </p>
+  <p>
+    Stock prices change every {{floor(settings.changePriceTimeout/1000)}} seconds.
+  </p>
+  <button class="" onclick="document.getElementById('edit-settings').style.display = 'block'">
+    Change settings
+  </button>
+</div>
+<div class="w3-modal" id="edit-settings">
+  <div class="w3-container w3-modal-content">
+    <div class="content-center">
+      <p>Change settings
+        <span class="button-like destructive white-button w3-display-topright"
+              onclick="document.getElementById('edit-settings').style.display='none'">&times;</span>
+      </p>
+      <label for="hours" class="content-standalone">Bargain will start in</label>
+      <input type="number" min="0" max="71" placeholder="Hours" id="hours">&nbsp;
+      <input type="number" min="0" max="59" placeholder="Minutes" id="minutes">
+      <br>
+      Bargain duration: <input type="number" min="0" max="600" placeholder="seconds" id="bargain-time"><br>
+      Stock price change interval: <input type="number" min="0" max="60" id="price-change-timeout"> seconds
+      <br>
+      <button (click)="save()">Save</button>
+    </div>
+  </div>
+</div>

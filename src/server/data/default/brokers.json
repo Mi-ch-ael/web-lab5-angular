@@ -1,0 +1,20 @@
+[
+  {
+    "firstName": "Otto",
+    "lastName": "Geiger",
+    "country": "GE",
+    "money": 15000
+  },
+  {
+    "firstName": "John",
+    "lastName": "Smith",
+    "country": "UK",
+    "money": 12000
+  },
+  {
+    "firstName": "Edvard",
+    "lastName": "Kalev",
+    "country": "LT",
+    "money": 6000
+  }
+]

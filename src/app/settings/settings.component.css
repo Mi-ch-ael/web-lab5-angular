@@ -1,0 +1,15 @@
+@import "../w3.css";
+@import "../styles.css";
+
+.section-header {
+  padding: 8px;
+  text-align: center;
+  align-content: center;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+input {
+  margin: 8px;
+  width: 100px;
+}

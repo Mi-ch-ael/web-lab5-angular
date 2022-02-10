@@ -1,0 +1,73 @@
+<div class="section-header">
+  <h2>Brokers</h2>
+</div>
+<div class="content-center">
+  <button class="button-like"
+  onclick="document.getElementById('addBroker').style.display='block'">Add broker</button>
+</div>
+  <div class="content-center">
+    <ul class="w3-ul" *ngFor="let broker of brokers">
+      <li>
+        <p>
+          {{broker.firstName}} {{broker.lastName}},
+          {{broker.country}}<br>
+          Money: {{broker.money}}
+        </p>
+        <input type="checkbox" (click)="toggleIncluded(brokers.indexOf(broker))" class="content-standalone"
+               id="{{'included#'+brokers.indexOf(broker)}}" [checked]="broker.included">
+        <label for="{{'included#'+brokers.indexOf(broker)}}">Included</label><br>
+        <input type="checkbox" (click)="toggleEdit(brokers.indexOf(broker))"
+               class="content-below content-standalone"
+               id="{{'edit#'+brokers.indexOf(broker)}}">
+        <label for="{{'edit#'+brokers.indexOf(broker)}}">Edit</label>
+        <div *ngIf="formsVisibility[brokers.indexOf(broker)]" class="content-standalone w3-pale-yellow">
+          <input type="text" placeholder="First name" id="{{ 'firstName#'+brokers.indexOf(broker) }}"
+          value="{{broker.firstName}}" class="content-standalone"><br>
+          <input type="text" placeholder="Last name" id="{{ 'lastName#'+brokers.indexOf(broker) }}"
+                 value="{{broker.lastName}}" class="content-below"><br>
+          <select id="{{ 'country#'+brokers.indexOf(broker) }}" class="content-standalone">
+            <option value="">Choose a country if necessary</option>
+            <option value="GE">GE</option>
+            <option value="LT">LT</option>
+            <option value="LV">LV</option>
+            <option value="RU">RU</option>
+            <option value="UK">UK</option>
+            <option value="US">US</option>
+          </select><br>
+          <input type="number" min="0" max="20000" step="250" id="{{ 'money#'+brokers.indexOf(broker) }}"
+                 value="{{broker.money}}" class="content-below"><br>
+          <input type="button" value="Save" (click)="saveBrokerData(brokers.indexOf(broker))"
+            class="content-standalone button-like"><br>
+          <input type="button" value="Delete" (click)="deleteBroker(brokers.indexOf(broker))"
+                 class="content-standalone button-like destructive">
+        </div>
+      </li>
+    </ul>
+  </div>
+<div class="w3-modal" style="display: none" id="addBroker">
+  <div class="w3-container w3-modal-content">
+    <div class="content-center">
+      <p>Add new participant
+        <span class="button-like destructive white-button w3-display-topright"
+              onclick="document.getElementById('addBroker').style.display='none'">&times;</span>
+      </p>
+      <input type="text" placeholder="First name" class="content-standalone" id="newFirstName"><br>
+      <input type="text" placeholder="Last name" class="content-standalone" id="newLastName"><br>
+      <select id="newCountry" class="content-standalone">
+        <option value="--">Country</option>
+        <option value="GE">GE</option>
+        <option value="LT">LT</option>
+        <option value="LV">LV</option>
+        <option value="RU">RU</option>
+        <option value="UK">UK</option>
+        <option value="US">US</option>
+      </select><br>
+      <input type="number" min="0" max="20000" step="250" id="newMoney"
+             value="0" class="content-below"><br>
+      <input type="button" value="Save" (click)="addBroker()"
+             class="content-standalone button-like"
+             onclick="document.getElementById('addBroker').style.display='none'">
+    </div>
+  </div>
+</div>
+
