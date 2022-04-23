@@ -4,7 +4,7 @@ The goal of this educational project was to get familiar with Typescript and Ang
 
 ## Description
 
-The task was to create a web application which would allow to edit and export data for yet another educational project "stock market": a list of brokers at the stock market, a list of stocks and some general settings (trading time, stock price change frequency). It was to be done via RESTful client-server interaction.
+The task was to create a web application which would allow to edit and export data for yet another educational project ["stock market"](https://github.com/Mi-ch-ael/web-lab6-react): a list of brokers at the stock market, a list of stocks and some general settings (trading time, stock price change frequency). It was to be done via RESTful client-server interaction.
 
 ## Launch
 
